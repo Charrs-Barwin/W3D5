@@ -1,7 +1,8 @@
 require_relative "Polytree_node"
 
 class KnightPathFinder
-  @@POSSIBLE_OFFSETS = [[1,2],[1,-2],[-1,2],[-1,-2],[2,1],[2,-1],[-2,1],[-2,-1]].sort
+  POSSIBLE_OFFSETS = [[1,2],[1,-2],[-1,2],[-1,-2],[2,1],[2,-1],[-2,1],[-2,-1]].sort
+  #sort used to get same path as example.  Fastest path still given without sort.  
   attr :root_node
   def initialize(start_pos)
     @root_node = PolyTreeNode.new(start_pos)
