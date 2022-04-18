@@ -8,6 +8,13 @@ class PolyTreeNode
         @children =[]
     end
 
+    def inspect(n=0)
+        n.times{print "\t"}
+        p self.value
+        children.each{|c|c.inspect(n+1)}
+    end
+
+
     def parent=(node = nil)
         parent.children.delete(self) if parent
         @parent = node 
@@ -23,7 +30,6 @@ class PolyTreeNode
     end
 
     def dfs(target_value)
-        
         return self if self.value == target_value
         children.each do |c|
             # return c if c.value == target_value (only check with base case)
